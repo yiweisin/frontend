@@ -154,7 +154,8 @@ export default function StocksList() {
       });
     }
     return sortableStocks;
-  }, [filteredStocks, sortConfig, yesterdayPrices, calculateDailyChange]);
+    // Since calculateDailyChange uses yesterdayPrices internally, we don't need to include both
+  }, [filteredStocks, sortConfig, calculateDailyChange]);
 
   const getSortDirectionIndicator = (columnName: string) => {
     if (sortConfig.key !== columnName) {

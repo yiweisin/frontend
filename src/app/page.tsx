@@ -35,9 +35,9 @@ export default function Home() {
       setLoading(true);
       setError(null);
 
-      const [tradesData, _, stockPrices] = await Promise.all([
+      const [tradesData, _unused, stockPrices] = await Promise.all([
         getTrades(),
-        getStocks(), // Using _ to indicate unused variable
+        getStocks(),
         getStockPrices(),
       ]);
 

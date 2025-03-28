@@ -148,10 +148,10 @@ function StocksList() {
             });
         }
         return sortableStocks;
+    // Since calculateDailyChange uses yesterdayPrices internally, we don't need to include both
     }, [
         filteredStocks,
         sortConfig,
-        yesterdayPrices,
         calculateDailyChange
     ]);
     const getSortDirectionIndicator = (columnName)=>{
@@ -171,12 +171,12 @@ function StocksList() {
                     d: "M7 15l5 5 5-5M7 9l5-5 5 5"
                 }, void 0, false, {
                     fileName: "[project]/src/app/stocks/page.tsx",
-                    lineNumber: 174,
+                    lineNumber: 175,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/stocks/page.tsx",
-                lineNumber: 162,
+                lineNumber: 163,
                 columnNumber: 9
             }, this);
         }
@@ -195,12 +195,12 @@ function StocksList() {
                 d: "M18 15l-6-6-6 6"
             }, void 0, false, {
                 fileName: "[project]/src/app/stocks/page.tsx",
-                lineNumber: 192,
+                lineNumber: 193,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/stocks/page.tsx",
-            lineNumber: 180,
+            lineNumber: 181,
             columnNumber: 7
         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
             xmlns: "http://www.w3.org/2000/svg",
@@ -217,12 +217,12 @@ function StocksList() {
                 d: "M6 9l6 6 6-6"
             }, void 0, false, {
                 fileName: "[project]/src/app/stocks/page.tsx",
-                lineNumber: 207,
+                lineNumber: 208,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/stocks/page.tsx",
-            lineNumber: 195,
+            lineNumber: 196,
             columnNumber: 7
         }, this);
     };
@@ -242,7 +242,7 @@ function StocksList() {
                         className: "w-12 h-12 border-4 border-slate-200 border-t-slate-800 rounded-full animate-spin mx-auto mb-4"
                     }, void 0, false, {
                         fileName: "[project]/src/app/stocks/page.tsx",
-                        lineNumber: 224,
+                        lineNumber: 225,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -250,18 +250,18 @@ function StocksList() {
                         children: "Loading stocks..."
                     }, void 0, false, {
                         fileName: "[project]/src/app/stocks/page.tsx",
-                        lineNumber: 225,
+                        lineNumber: 226,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/stocks/page.tsx",
-                lineNumber: 223,
+                lineNumber: 224,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/stocks/page.tsx",
-            lineNumber: 222,
+            lineNumber: 223,
             columnNumber: 7
         }, this);
     }
@@ -289,7 +289,7 @@ function StocksList() {
                                 r: "10"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/stocks/page.tsx",
-                                lineNumber: 247,
+                                lineNumber: 248,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -299,7 +299,7 @@ function StocksList() {
                                 y2: "12"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/stocks/page.tsx",
-                                lineNumber: 248,
+                                lineNumber: 249,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -309,13 +309,13 @@ function StocksList() {
                                 y2: "16"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/stocks/page.tsx",
-                                lineNumber: 249,
+                                lineNumber: 250,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/stocks/page.tsx",
-                        lineNumber: 235,
+                        lineNumber: 236,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -323,25 +323,25 @@ function StocksList() {
                         children: "Error Loading Stocks"
                     }, void 0, false, {
                         fileName: "[project]/src/app/stocks/page.tsx",
-                        lineNumber: 251,
+                        lineNumber: 252,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         children: error
                     }, void 0, false, {
                         fileName: "[project]/src/app/stocks/page.tsx",
-                        lineNumber: 252,
+                        lineNumber: 253,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/stocks/page.tsx",
-                lineNumber: 234,
+                lineNumber: 235,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/stocks/page.tsx",
-            lineNumber: 233,
+            lineNumber: 234,
             columnNumber: 7
         }, this);
     }
@@ -361,7 +361,7 @@ function StocksList() {
                                     children: "Market Overview"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/stocks/page.tsx",
-                                    lineNumber: 264,
+                                    lineNumber: 265,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -371,7 +371,7 @@ function StocksList() {
                                             className: `h-2 w-2 rounded-full mr-2 ${refreshCounter > 0 ? "bg-emerald-400 animate-pulse" : "bg-slate-400"}`
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/stocks/page.tsx",
-                                            lineNumber: 266,
+                                            lineNumber: 267,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -379,19 +379,19 @@ function StocksList() {
                                             children: refreshCounter > 0 ? "Live Updates" : "Connecting..."
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/stocks/page.tsx",
-                                            lineNumber: 273,
+                                            lineNumber: 274,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/stocks/page.tsx",
-                                    lineNumber: 265,
+                                    lineNumber: 266,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/stocks/page.tsx",
-                            lineNumber: 263,
+                            lineNumber: 264,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -407,7 +407,7 @@ function StocksList() {
                                         className: "w-full py-3 px-4 pr-10 bg-white/10 backdrop-blur-sm border border-slate-600/50 rounded-lg text-white placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/stocks/page.tsx",
-                                        lineNumber: 282,
+                                        lineNumber: 283,
                                         columnNumber: 15
                                     }, this),
                                     searchTerm && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -430,7 +430,7 @@ function StocksList() {
                                                     r: "10"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/stocks/page.tsx",
-                                                    lineNumber: 305,
+                                                    lineNumber: 306,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -440,7 +440,7 @@ function StocksList() {
                                                     y2: "15"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/stocks/page.tsx",
-                                                    lineNumber: 306,
+                                                    lineNumber: 307,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -450,18 +450,18 @@ function StocksList() {
                                                     y2: "15"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/stocks/page.tsx",
-                                                    lineNumber: 307,
+                                                    lineNumber: 308,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/stocks/page.tsx",
-                                            lineNumber: 294,
+                                            lineNumber: 295,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/stocks/page.tsx",
-                                        lineNumber: 290,
+                                        lineNumber: 291,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -483,7 +483,7 @@ function StocksList() {
                                                     r: "8"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/stocks/page.tsx",
-                                                    lineNumber: 323,
+                                                    lineNumber: 324,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -493,35 +493,35 @@ function StocksList() {
                                                     y2: "16.65"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/stocks/page.tsx",
-                                                    lineNumber: 324,
+                                                    lineNumber: 325,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/stocks/page.tsx",
-                                            lineNumber: 312,
+                                            lineNumber: 313,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/stocks/page.tsx",
-                                        lineNumber: 311,
+                                        lineNumber: 312,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/stocks/page.tsx",
-                                lineNumber: 281,
+                                lineNumber: 282,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/stocks/page.tsx",
-                            lineNumber: 280,
+                            lineNumber: 281,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/stocks/page.tsx",
-                    lineNumber: 262,
+                    lineNumber: 263,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -545,12 +545,12 @@ function StocksList() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/stocks/page.tsx",
-                                                lineNumber: 341,
+                                                lineNumber: 342,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/stocks/page.tsx",
-                                            lineNumber: 336,
+                                            lineNumber: 337,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -565,12 +565,12 @@ function StocksList() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/stocks/page.tsx",
-                                                lineNumber: 351,
+                                                lineNumber: 352,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/stocks/page.tsx",
-                                            lineNumber: 346,
+                                            lineNumber: 347,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -585,12 +585,12 @@ function StocksList() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/stocks/page.tsx",
-                                                lineNumber: 361,
+                                                lineNumber: 362,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/stocks/page.tsx",
-                                            lineNumber: 356,
+                                            lineNumber: 357,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -605,23 +605,23 @@ function StocksList() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/stocks/page.tsx",
-                                                lineNumber: 371,
+                                                lineNumber: 372,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/stocks/page.tsx",
-                                            lineNumber: 366,
+                                            lineNumber: 367,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/stocks/page.tsx",
-                                    lineNumber: 335,
+                                    lineNumber: 336,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/stocks/page.tsx",
-                                lineNumber: 334,
+                                lineNumber: 335,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -633,12 +633,12 @@ function StocksList() {
                                         children: searchTerm ? `No stocks found matching "${searchTerm}"` : "No stocks available."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/stocks/page.tsx",
-                                        lineNumber: 381,
+                                        lineNumber: 382,
                                         columnNumber: 19
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/stocks/page.tsx",
-                                    lineNumber: 380,
+                                    lineNumber: 381,
                                     columnNumber: 17
                                 }, this) : sortedStocks.map((stock)=>{
                                     const change = calculateDailyChange(stock);
@@ -654,12 +654,12 @@ function StocksList() {
                                                     children: stock.symbol
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/stocks/page.tsx",
-                                                    lineNumber: 401,
+                                                    lineNumber: 402,
                                                     columnNumber: 25
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stocks/page.tsx",
-                                                lineNumber: 400,
+                                                lineNumber: 401,
                                                 columnNumber: 23
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -669,12 +669,12 @@ function StocksList() {
                                                     children: stock.name
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/stocks/page.tsx",
-                                                    lineNumber: 406,
+                                                    lineNumber: 407,
                                                     columnNumber: 25
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stocks/page.tsx",
-                                                lineNumber: 405,
+                                                lineNumber: 406,
                                                 columnNumber: 23
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -687,12 +687,12 @@ function StocksList() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/stocks/page.tsx",
-                                                    lineNumber: 409,
+                                                    lineNumber: 410,
                                                     columnNumber: 25
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stocks/page.tsx",
-                                                lineNumber: 408,
+                                                lineNumber: 409,
                                                 columnNumber: 23
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -709,46 +709,46 @@ function StocksList() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/stocks/page.tsx",
-                                                    lineNumber: 414,
+                                                    lineNumber: 415,
                                                     columnNumber: 25
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/stocks/page.tsx",
-                                                lineNumber: 413,
+                                                lineNumber: 414,
                                                 columnNumber: 23
                                             }, this)
                                         ]
                                     }, stock.id, true, {
                                         fileName: "[project]/src/app/stocks/page.tsx",
-                                        lineNumber: 395,
+                                        lineNumber: 396,
                                         columnNumber: 21
                                     }, this);
                                 })
                             }, void 0, false, {
                                 fileName: "[project]/src/app/stocks/page.tsx",
-                                lineNumber: 378,
+                                lineNumber: 379,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/stocks/page.tsx",
-                        lineNumber: 333,
+                        lineNumber: 334,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/stocks/page.tsx",
-                    lineNumber: 332,
+                    lineNumber: 333,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/stocks/page.tsx",
-            lineNumber: 260,
+            lineNumber: 261,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/stocks/page.tsx",
-        lineNumber: 259,
+        lineNumber: 260,
         columnNumber: 5
     }, this);
 }
