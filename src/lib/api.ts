@@ -7,7 +7,7 @@ import {
   SellTradeRequest,
 } from "../types/trade";
 
-const API_URL = "http://127.0.0.1:5000/api";
+const API_URL = "ec2-44-202-141-108.compute-1.amazonaws.com/api";
 
 async function fetchWithAuth(url: string, options: RequestInit = {}) {
   const user = JSON.parse(localStorage.getItem("user") || "{}") as User;
