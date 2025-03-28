@@ -8,6 +8,12 @@ import { Trade } from "../types/trade";
 import { getTrades, getStocks, getStockPrices, sellTrade } from "../lib/api";
 import TradeItem from "@/components/TradeItem";
 
+// Define interfaces for API response types
+interface StockPrice {
+  id: number;
+  price: number;
+}
+
 export default function Home() {
   const { user, loading: authLoading } = useAuth();
   const router = useRouter();
@@ -29,18 +35,22 @@ export default function Home() {
       setLoading(true);
       setError(null);
 
-      const [tradesData, stocksData, stockPrices] = await Promise.all([
+      const [tradesData, _, stockPrices] = await Promise.all([
         getTrades(),
-        getStocks(),
+        getStocks(), // Using _ to indicate unused variable
         getStockPrices(),
       ]);
 
       setAllTrades(tradesData);
 
-      const holdingTrades = tradesData.filter((trade) => trade.isHolding);
+      const holdingTrades = tradesData.filter(
+        (trade: Trade) => trade.isHolding
+      );
 
-      const tradesWithCurrentPrices = holdingTrades.map((trade) => {
-        const stockPrice = stockPrices.find((sp) => sp.id === trade.stockId);
+      const tradesWithCurrentPrices = holdingTrades.map((trade: Trade) => {
+        const stockPrice = stockPrices.find(
+          (sp: StockPrice) => sp.id === trade.stockId
+        );
         if (stockPrice) {
           return {
             ...trade,
@@ -84,7 +94,7 @@ export default function Home() {
           setTrades((prevTrades) =>
             prevTrades.map((trade) => {
               const stockPrice = stockPrices.find(
-                (sp) => sp.id === trade.stockId
+                (sp: StockPrice) => sp.id === trade.stockId
               );
               if (stockPrice) {
                 return {
@@ -446,8 +456,8 @@ export default function Home() {
                   No Active Positions
                 </h3>
                 <p className="text-slate-500 max-w-md">
-                  You don't have any active positions at the moment. Click the
-                  "Buy Stock" button to add your first position.
+                  You don&apos;t have any active positions at the moment. Click
+                  the &quot;Buy Stock&quot; button to add your first position.
                 </p>
               </div>
             ) : (

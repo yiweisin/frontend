@@ -127,7 +127,7 @@ export default function StocksList() {
   );
 
   const sortedStocks = React.useMemo(() => {
-    let sortableStocks = [...filteredStocks];
+    const sortableStocks = [...filteredStocks];
     if (sortConfig.key) {
       sortableStocks.sort((a, b) => {
         if (sortConfig.key === "daily") {
@@ -141,11 +141,11 @@ export default function StocksList() {
           }
           return 0;
         } else {
-          // @ts-ignore: Dynamic property access
+          // @ts-expect-error Dynamic property access
           if (a[sortConfig.key] < b[sortConfig.key]) {
             return sortConfig.direction === "ascending" ? -1 : 1;
           }
-          // @ts-ignore: Dynamic property access
+          // @ts-expect-error Dynamic property access
           if (a[sortConfig.key] > b[sortConfig.key]) {
             return sortConfig.direction === "ascending" ? 1 : -1;
           }
@@ -154,7 +154,7 @@ export default function StocksList() {
       });
     }
     return sortableStocks;
-  }, [filteredStocks, sortConfig, yesterdayPrices]);
+  }, [filteredStocks, sortConfig, yesterdayPrices, calculateDailyChange]);
 
   const getSortDirectionIndicator = (columnName: string) => {
     if (sortConfig.key !== columnName) {

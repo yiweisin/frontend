@@ -142,7 +142,7 @@ function StocksList() {
     const filteredStocks = stocks.filter((stock)=>stock.symbol.toLowerCase().includes(searchTerm.toLowerCase()) || stock.name.toLowerCase().includes(searchTerm.toLowerCase()));
     const sortedStocks = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].useMemo({
         "StocksList.useMemo[sortedStocks]": ()=>{
-            let sortableStocks = [
+            const sortableStocks = [
                 ...filteredStocks
             ];
             if (sortConfig.key) {
@@ -159,11 +159,11 @@ function StocksList() {
                             }
                             return 0;
                         } else {
-                            // @ts-ignore: Dynamic property access
+                            // @ts-expect-error Dynamic property access
                             if (a[sortConfig.key] < b[sortConfig.key]) {
                                 return sortConfig.direction === "ascending" ? -1 : 1;
                             }
-                            // @ts-ignore: Dynamic property access
+                            // @ts-expect-error Dynamic property access
                             if (a[sortConfig.key] > b[sortConfig.key]) {
                                 return sortConfig.direction === "ascending" ? 1 : -1;
                             }
@@ -177,7 +177,8 @@ function StocksList() {
     }["StocksList.useMemo[sortedStocks]"], [
         filteredStocks,
         sortConfig,
-        yesterdayPrices
+        yesterdayPrices,
+        calculateDailyChange
     ]);
     const getSortDirectionIndicator = (columnName)=>{
         if (sortConfig.key !== columnName) {

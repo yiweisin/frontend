@@ -5,5 +5,6 @@
   "/profile/page": "app/profile/page.js",
   "/register/page": "app/register/page.js",
   "/stocks/[id]/page": "app/stocks/[id]/page.js",
-  "/stocks/page": "app/stocks/page.js"
+  "/stocks/page": "app/stocks/page.js",
+  "/trades/page": "app/trades/page.js"
 }

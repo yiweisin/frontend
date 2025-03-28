@@ -333,7 +333,7 @@ export default function StockDetailPage() {
               Purchase Successful!
             </h3>
             <p className="text-sm text-slate-600">
-              You've successfully purchased {stock.symbol} shares.
+              You&apos;ve successfully purchased {stock.symbol} shares.
             </p>
           </div>
           <button
@@ -492,7 +492,9 @@ export default function StockDetailPage() {
               {["1W", "1M", "3M", "1Y", "ALL"].map((range) => (
                 <button
                   key={range}
-                  onClick={() => setTimeRange(range as any)}
+                  onClick={() =>
+                    setTimeRange(range as "1W" | "1M" | "3M" | "1Y" | "ALL")
+                  }
                   className={`px-4 py-1.5 text-sm font-medium ${
                     timeRange === range
                       ? "bg-slate-700 text-white"

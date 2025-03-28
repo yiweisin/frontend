@@ -3,20 +3,12 @@
 import React from "react";
 import { useState, useEffect, useCallback } from "react";
 import { Trade } from "@/types/trade";
-import { Stock } from "@/types/stock";
 import Link from "next/link";
-import {
-  getTrades,
-  getStocks,
-  getStockPrices,
-  sellTrade,
-  deleteTrade,
-} from "@/lib/api";
+import { getTrades, getStockPrices, sellTrade, deleteTrade } from "@/lib/api";
 import TradeItem from "@/components/TradeItem";
 
 export default function TradesPage() {
   const [trades, setTrades] = useState<Trade[]>([]);
-  const [stocks, setStocks] = useState<Stock[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [refreshCounter, setRefreshCounter] = useState(0);
@@ -27,10 +19,9 @@ export default function TradesPage() {
       setLoading(true);
       setError(null);
 
-      // Fetch trades, stocks and current prices
-      const [tradesData, stocksData, stockPrices] = await Promise.all([
+      // Fetch trades and current prices
+      const [tradesData, stockPrices] = await Promise.all([
         getTrades(),
-        getStocks(),
         getStockPrices(),
       ]);
 
@@ -50,7 +41,6 @@ export default function TradesPage() {
       });
 
       setTrades(tradesWithCurrentPrices);
-      setStocks(stocksData);
     } catch (err) {
       setError("Failed to fetch data");
       console.error(err);
