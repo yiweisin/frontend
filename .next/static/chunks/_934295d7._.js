@@ -20,7 +20,7 @@ __turbopack_context__.s({
     "sellTrade": (()=>sellTrade),
     "updateTrade": (()=>updateTrade)
 });
-const API_URL = "http://localhost:5141/api";
+const API_URL = "http://localhost:5000/api";
 async function fetchWithAuth(url, options = {}) {
     const user = JSON.parse(localStorage.getItem("user") || "{}");
     if (user.token) {
