@@ -162,9 +162,7 @@ export default function StockDetailPage() {
     router.back();
   };
 
-  // Handle buying stock
   const handleBuyStock = async () => {
-    // Show purchasing state
     setIsPurchasing(true);
     try {
       if (stock)
@@ -181,7 +179,6 @@ export default function StockDetailPage() {
     }
   };
 
-  // Helper to format percentage with color based on value
   const renderPercentageChange = (value: number | null) => {
     if (value === null) return <span className="text-gray-400">N/A</span>;
 
@@ -197,7 +194,6 @@ export default function StockDetailPage() {
     );
   };
 
-  // Filter chart data based on selected time range
   const getFilteredChartData = () => {
     if (priceHistory.length === 0) return [];
 
@@ -219,21 +215,18 @@ export default function StockDetailPage() {
         break;
       case "ALL":
       default:
-        cutoffDate = new Date(0); // Beginning of time
+        cutoffDate = new Date(0);
     }
 
-    // Format the data for the chart with proper date objects
     const allData = priceHistory.map((item) => {
-      // Parse the date to ensure proper ordering
       const dateObj = new Date(item.date);
       return {
-        fullDate: dateObj, // Store the full date object for sorting
-        date: item.date, // Keep original string for display
+        fullDate: dateObj,
+        date: item.date,
         price: item.price,
       };
     });
 
-    // Filter by date range and ensure sorted
     return allData
       .filter((item) => item.fullDate >= cutoffDate)
       .sort((a, b) => a.fullDate.getTime() - b.fullDate.getTime());
@@ -241,15 +234,14 @@ export default function StockDetailPage() {
 
   const filteredChartData = getFilteredChartData();
 
-  // Find min and max values for the chart to calculate domain padding
   const minPrice =
     filteredChartData.length > 0
-      ? Math.min(...filteredChartData.map((d) => d.price)) * 0.98 // Pad by 2%
+      ? Math.min(...filteredChartData.map((d) => d.price)) * 0.98
       : 0;
 
   const maxPrice =
     filteredChartData.length > 0
-      ? Math.max(...filteredChartData.map((d) => d.price)) * 1.02 // Pad by 2%
+      ? Math.max(...filteredChartData.map((d) => d.price)) * 1.02
       : 100;
 
   if (loading) {
@@ -543,7 +535,6 @@ export default function StockDetailPage() {
                     textAnchor="end"
                     height={60}
                     tickFormatter={(value) => {
-                      // Format date for display based on time range
                       const date = new Date(value);
                       if (timeRange === "1W" || timeRange === "1M") {
                         return date.toLocaleDateString("en-US", {

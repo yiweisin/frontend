@@ -7,7 +7,7 @@ export interface Trade {
   pnl: number;
   date: string;
   isHolding: boolean;
-  currentPrice?: number; // Added to track current price for calculations
+  currentPrice?: number;
 }
 
 export interface CreateTradeRequest {

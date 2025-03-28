@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useAuth } from "../context/AuthContext";
 
-// Modern icon components
 const DashboardIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

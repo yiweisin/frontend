@@ -41,10 +41,8 @@ export default function ProfilePage() {
               : 0;
 
           const totalPnL = trades.reduce((sum, trade) => {
-            // For closed trades, use stored PNL
             if (!trade.isHolding) return sum + trade.pnl;
 
-            // For open trades, calculate potential PNL
             return trade.currentPrice
               ? sum + (trade.currentPrice - trade.entryPrice)
               : sum;
@@ -53,7 +51,6 @@ export default function ProfilePage() {
           const avgPnlPerTrade =
             totalTrades > 0 ? Number((totalPnL / totalTrades).toFixed(2)) : 0;
 
-          // Find best and worst trades
           let bestTrade = 0;
           let worstTrade = 0;
 

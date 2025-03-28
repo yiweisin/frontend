@@ -24,7 +24,6 @@ export default function StocksList() {
   });
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Initial load
   useEffect(() => {
     const fetchStocks = async () => {
       try {
@@ -32,14 +31,10 @@ export default function StocksList() {
         setError(null);
         const data = await getStocks();
         setStocks(data);
-
-        // Fetch yesterday's prices for each stock
         const yesterdayData: Record<number, number> = {};
         for (const stock of data) {
           try {
             const history = await getStockHistory(stock.id);
-            // Assuming the history is sorted by date, with the most recent first
-            // We want the second entry (yesterday's price)
             if (history.length >= 2) {
               yesterdayData[stock.id] = history[1].price;
             }
@@ -61,15 +56,12 @@ export default function StocksList() {
 
     fetchStocks();
 
-    // Start auto-refresh timer
     const timer = setInterval(() => {
       setRefreshCounter((prev) => prev + 1);
     }, 500);
 
     return () => clearInterval(timer);
   }, []);
-
-  // Auto-refresh stock prices
   useEffect(() => {
     if (refreshCounter > 0) {
       const updatePrices = async () => {
@@ -97,7 +89,6 @@ export default function StocksList() {
     }
   }, [refreshCounter]);
 
-  // Calculate daily change for a stock
   const calculateDailyChange = (stock: Stock) => {
     const yesterdayPrice = yesterdayPrices[stock.id];
     if (!yesterdayPrice) return { value: 0, percentage: 0 };
@@ -111,19 +102,16 @@ export default function StocksList() {
     };
   };
 
-  // Get CSS class for change (positive/negative)
   const getChangeClass = (change: number) => {
     if (change > 0) return "text-emerald-600";
     if (change < 0) return "text-rose-600";
     return "text-slate-500";
   };
 
-  // Handle stock selection - navigate to detail page
   const handleStockClick = (stockId: number) => {
     router.push(`/stocks/${stockId}`);
   };
 
-  // Handle sorting columns
   const requestSort = (key: string) => {
     let direction: "ascending" | "descending" = "ascending";
     if (sortConfig.key === key && sortConfig.direction === "ascending") {
@@ -132,14 +120,12 @@ export default function StocksList() {
     setSortConfig({ key, direction });
   };
 
-  // Filter stocks based on search term
   const filteredStocks = stocks.filter(
     (stock) =>
       stock.symbol.toLowerCase().includes(searchTerm.toLowerCase()) ||
       stock.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Sort the stocks based on current sort configuration
   const sortedStocks = React.useMemo(() => {
     let sortableStocks = [...filteredStocks];
     if (sortConfig.key) {
@@ -170,7 +156,6 @@ export default function StocksList() {
     return sortableStocks;
   }, [filteredStocks, sortConfig, yesterdayPrices]);
 
-  // Get sort direction indicator
   const getSortDirectionIndicator = (columnName: string) => {
     if (sortConfig.key !== columnName) {
       return (
@@ -224,12 +209,10 @@ export default function StocksList() {
     );
   };
 
-  // Handle search input change
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
   };
 
-  // Clear search input
   const clearSearch = () => {
     setSearchTerm("");
   };

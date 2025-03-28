@@ -19,7 +19,6 @@ export default function TradeItem({ trade, onSell, onDelete }: TradeItemProps) {
     });
   };
 
-  // Calculate current PNL if holding (use stored PNL if closed)
   const pnl =
     trade.isHolding && trade.currentPrice
       ? ((trade.currentPrice - trade.entryPrice) * 100) / 100
@@ -28,7 +27,6 @@ export default function TradeItem({ trade, onSell, onDelete }: TradeItemProps) {
   const pnlDisplay = pnl.toFixed(2);
   const pnlClass = pnl >= 0 ? "text-emerald-600" : "text-rose-600";
 
-  // Calculate percent change
   const percentChange =
     trade.isHolding && trade.currentPrice
       ? ((trade.currentPrice - trade.entryPrice) / trade.entryPrice) * 100
