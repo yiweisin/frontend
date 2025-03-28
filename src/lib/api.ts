@@ -7,7 +7,7 @@ import {
   SellTradeRequest,
 } from "../types/trade";
 
-const API_URL = "http://localhost:5141/api";
+const API_URL = "http://localhost:5000/api";
 
 async function fetchWithAuth(url: string, options: RequestInit = {}) {
   const user = JSON.parse(localStorage.getItem("user") || "{}") as User;
