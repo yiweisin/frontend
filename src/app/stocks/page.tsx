@@ -1,7 +1,6 @@
 "use client";
 
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Stock } from "@/types/stock";
 import { getStocks, getStockPrices, getStockHistory } from "@/lib/api";
 import { useRouter } from "next/navigation";
@@ -89,18 +88,21 @@ export default function StocksList() {
     }
   }, [refreshCounter]);
 
-  const calculateDailyChange = (stock: Stock) => {
-    const yesterdayPrice = yesterdayPrices[stock.id];
-    if (!yesterdayPrice) return { value: 0, percentage: 0 };
+  const calculateDailyChange = useCallback(
+    (stock: Stock) => {
+      const yesterdayPrice = yesterdayPrices[stock.id];
+      if (!yesterdayPrice) return { value: 0, percentage: 0 };
 
-    const change = stock.price - yesterdayPrice;
-    const percentage = (change / yesterdayPrice) * 100;
+      const change = stock.price - yesterdayPrice;
+      const percentage = (change / yesterdayPrice) * 100;
 
-    return {
-      value: change,
-      percentage: percentage,
-    };
-  };
+      return {
+        value: change,
+        percentage: percentage,
+      };
+    },
+    [yesterdayPrices]
+  );
 
   const getChangeClass = (change: number) => {
     if (change > 0) return "text-emerald-600";

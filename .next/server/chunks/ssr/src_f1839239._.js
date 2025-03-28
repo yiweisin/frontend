@@ -318,7 +318,7 @@ function Home() {
         try {
             setLoading(true);
             setError(null);
-            const [tradesData, _unused, stockPrices] = await Promise.all([
+            const [tradesData, , stockPrices] = await Promise.all([
                 (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$api$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getTrades"])(),
                 (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$api$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getStocks"])(),
                 (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$api$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getStockPrices"])()
