@@ -249,10 +249,13 @@ export async function updateNotificationPreferences(
     try {
       const errorData = await response.json();
       errorMessage = errorData.message || errorMessage;
-    } catch (_e) {
+    } catch (e) {
+      console.error("Error parsing response text:", e);
       try {
         errorMessage = (await response.text()) || errorMessage;
-      } catch (_e) {}
+      } catch (e) {
+        console.error("Error parsing response text:", e);
+      }
     }
     console.error("API Error:", errorMessage);
     throw new Error(errorMessage);
@@ -269,10 +272,13 @@ export async function sendTestNotification(): Promise<void> {
     try {
       const errorData = await response.json();
       errorMessage = errorData.message || errorMessage;
-    } catch (_e) {
+    } catch (e) {
+      console.error("Error parsing response text:", e);
       try {
         errorMessage = (await response.text()) || errorMessage;
-      } catch (_e) {}
+      } catch (e) {
+        console.error("Error parsing response text:", e);
+      }
     }
     console.error("API Error:", errorMessage);
     throw new Error(errorMessage);
