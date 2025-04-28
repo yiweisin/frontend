@@ -249,10 +249,10 @@ export async function updateNotificationPreferences(
     try {
       const errorData = await response.json();
       errorMessage = errorData.message || errorMessage;
-    } catch (e) {
+    } catch (_e) {
       try {
         errorMessage = (await response.text()) || errorMessage;
-      } catch (e) {}
+      } catch (_e) {}
     }
     console.error("API Error:", errorMessage);
     throw new Error(errorMessage);
@@ -269,10 +269,10 @@ export async function sendTestNotification(): Promise<void> {
     try {
       const errorData = await response.json();
       errorMessage = errorData.message || errorMessage;
-    } catch (e) {
+    } catch (_e) {
       try {
         errorMessage = (await response.text()) || errorMessage;
-      } catch (e) {}
+      } catch (_e) {}
     }
     console.error("API Error:", errorMessage);
     throw new Error(errorMessage);

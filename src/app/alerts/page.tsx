@@ -120,8 +120,8 @@ export default function AlertsPage() {
                 No Price Alerts Set
               </h3>
               <p className="text-slate-500 max-w-md">
-                You haven't set any price alerts yet. Create an alert to get
-                notified when a stock hits your target price.
+                You haven&apos;t set any price alerts yet. Create an alert to
+                get notified when a stock hits your target price.
               </p>
             </div>
           ) : (
